@@ -7,8 +7,8 @@ const ThemeSwitch = () => {
     const currentTheme = theme === 'system' ? systemTheme : theme;
 
     return (
-        <button onClick={() => (currentTheme == 'dark' ? setTheme('light') : setTheme('dark'))}>
-            <Image src="/icons/app/moon-icon.png" alt="sun-icon" width={32} height={32} className="bg-purple-900 dark:hidden" />
+        <button onClick={() => (currentTheme === 'dark' ? setTheme('light') : setTheme('dark'))}>
+            <Image src="/icons/app/moon-icon.png" alt="sun-icon" width={32} height={32} className="dark:hidden" />
             <Image src="/icons/app/sun-icon.png" alt="moon-icon" width={32} height={32} className="hidden dark:block" />
         </button>
     );

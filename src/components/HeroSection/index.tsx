@@ -20,7 +20,7 @@ export default function HeroSection() {
                     wrapper="h1"
                     preRenderFirstString
                 />
-                <h2 className="text-2xl sm:text-3xl text-purple-900 text-center">Full Stack Developer</h2>
+                <h2 className="text-xl sm:text-3xl text-purple-900 text-center">Full Stack Developer</h2>
             </div>
             <SocialLinks />
         </section>
