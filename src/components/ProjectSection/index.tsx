@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import React from 'react';
 
 export default function ProjectSection() {
     return (
         <section className="section-full">
             <h2 className="text-4xl text-purple-900 text-center font-bold sm:text-6xl">Projetos</h2>
-            <p className="text-lg text-purple-900 text-center my-4 sm:text-xl">Alguns dos meus projetos pessoais</p>
+            <p className="text-lg text-purple-900 text-center my-4 sm:text-xl">Apps & Sistemas</p>
             <div className="w-full h-auto my-8">
                 <div className="block absolute w-36 h-36 -z-10 bg-purple-900  sm:w-44 sm:h-44"></div>
                 <div className="w-[calc(100%-1rem)] ml-4 mt-8 flex flex-wrap dark:bg-zinc-800 shadow-md sm:w-[calc(100%-2rem)] sm:ml-8 sm:mt-16">

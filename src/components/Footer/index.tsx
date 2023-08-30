@@ -7,7 +7,7 @@ const Footer = () => {
                 <SocialLinks />
                 <hr className="h-1 bg-purple-900 border-none" />
             </div>
-            <h6 className="text-2xl text-purple-900 font-light">Desenvolvido por Lane Zupiroli</h6>
+            <h6 className="text-xl text-purple-900 font-light sm:text-2xl">Desenvolvido por Lane Zupiroli</h6>
         </footer>
     );
 };

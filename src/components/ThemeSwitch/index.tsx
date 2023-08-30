@@ -1,6 +1,4 @@
 'use client';
-import moonIcon from '@/assets/icons/moon-icon.png';
-import sunIcon from '@/assets/icons/sun-icon.png';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
@@ -10,8 +8,8 @@ const ThemeSwitch = () => {
 
     return (
         <button onClick={() => (currentTheme == 'dark' ? setTheme('light') : setTheme('dark'))}>
-            <Image src={sunIcon} alt="sun-icon" width={32} height={32} className="dark:hidden" />
-            <Image src={moonIcon} alt="moon-icon" width={32} height={32} className="hidden dark:block" />
+            <Image src="/icons/app/moon-icon.png" alt="sun-icon" width={32} height={32} className="bg-purple-900 dark:hidden" />
+            <Image src="/icons/app/sun-icon.png" alt="moon-icon" width={32} height={32} className="hidden dark:block" />
         </button>
     );
 };

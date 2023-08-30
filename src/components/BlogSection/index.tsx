@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 async function getPosts() {
     const res = await fetch('https://dev.to/api/articles/latest?username=noriuki&per_page=3&page=1');
@@ -26,7 +25,7 @@ export default async function BlogSection() {
     return (
         <section className="section-full">
             <h2 className="text-4xl text-purple-900 text-center font-bold sm:text-6xl">Blog</h2>
-            <p className="text-lg text-purple-900 text-center my-4 sm:text-xl">Artigos & Tutorias mais recentes</p>
+            <p className="text-lg text-purple-900 text-center my-4 sm:text-xl">Artigos & Tutorias</p>
             <div className="w-full grid grid-cols-1 gap-x-20 gap-y-8 my-8 justify-items-center lg:grid-cols-3">
                 {!!posts.length &&
                     posts.map((post: Post) => {
