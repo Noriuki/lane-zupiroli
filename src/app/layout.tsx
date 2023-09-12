@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     title: 'Lane Zupiroli',
     description: 'Full Stack Developer',
     icons: {
-        icon: '/icon.png',
-        shortcut: '/icon.png',
-        apple: '/icon.png',
+        icon: '/icons/icon.png',
+        shortcut: '/icons/icon.png',
+        apple: '/icons/icon.png',
     },
 };
 
