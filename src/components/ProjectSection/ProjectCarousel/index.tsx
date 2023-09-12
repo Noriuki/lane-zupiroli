@@ -13,7 +13,7 @@ export default function ProjectCarousel() {
     <div className="embla" ref={emblaRef}>
       <div className="embla__container">
         {
-          projects.map((project: {name: string, description: string, image: string, link: string}) => (
+          projects.map((project: {name: string, description: string, image: string}) => (
             <div className='embla__slide'    key={project.name} >
               <div 
                 
