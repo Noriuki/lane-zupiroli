@@ -40,11 +40,13 @@ export default async function BlogSection() {
                 <div className="flex-1 p-4 w-full h-3/5 flex flex-col justify-between">
                   <h3 className="text-base md:text-lg text-center">{post.title}</h3>
                   <p className="text-xs line-clamp-4 flex-1 pt-4 text-justify">{post.description}</p>
-                  <div className="w-full h-1/5 flex justify-center items-center rounded-md bg-purple-900 text-white">
-                    <a href={post.url} target="_blank">
-                      <p className="text-xs md:text-sm">Ler mais...</p>
-                    </a>
-                  </div>
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    className="w-full h-1/5 flex justify-center items-center rounded-md bg-purple-900 text-white"
+                  >
+                    <p className="text-xs md:text-sm">Ler mais...</p>
+                  </a>
                 </div>
               </div>
             );

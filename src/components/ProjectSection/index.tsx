@@ -1,78 +1,45 @@
 'use client';
 
-import { gql, useQuery } from '@apollo/client';
+import data from '@/projects.json';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-
-const GET_PINNED_REPOS = gql`
-  query GetPinnedRepos($username: String!) {
-    user(login: $username) {
-      pinnedItems(first: 6, types: REPOSITORY) {
-        totalCount
-        nodes {
-          ... on Repository {
-            name
-            description
-            url
-            primaryLanguage {
-              name
-              color
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 interface Project {
   name: string;
   description: string;
   url: string;
-  primaryLanguage: {
+  thumbnail: string;
+  labels: {
     name: string;
-    color: string;
-  };
+  }[];
 }
 
 export default function ProjectSection() {
-  const { data } = useQuery(GET_PINNED_REPOS, {
-    variables: { username: 'Noriuki' },
-  });
-
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  useEffect(() => {
-    if (data) {
-      setProjects(data.user.pinnedItems.nodes);
-    }
-  }, [data]);
-
   return (
     <section className="section-full">
       <h2 className="text-4xl text-purple-900 text-center font-bold md:text-6xl mb-8">Projetos</h2>
-      <div className="w-full grid grid-cols-1 gap-x-20 gap-y-8 my-8 justify-items-center lg:grid-cols-3">
-        {projects?.map((project: Project) => (
-          <div className="flex flex-wrap w-[100%] h-[200px] rounded-md shadow-xl dark:bg-zinc-800">
-            <div
-              className="rounded-l-lg flex flex-wrap flex-col justify-center items-center"
-              style={{ width: '10%', height: '100%', backgroundColor: project.primaryLanguage.color }}
-            >
-              <Link href={project.url} target="__blank">
-                <Image
-                  src="/icons/app/link-open.png"
-                  alt="post-cover"
-                  width={20}
-                  height={20}
-                  quality={100}
-                  className="m-auto"
-                />
-              </Link>
+      <div className="w-full grid grid-cols-1 gap-x-20 gap-y-8 my-8 justify-items-center">
+        {data.projects?.map((project: Project) => (
+          <div className="flex flex-wrap w-[100%] h-[580px] md:h-[350px] rounded-md shadow-xl dark:bg-zinc-800">
+            <div className="w-full h-3/6  md:w-2/5 md:h-full relative rounded-t-md">
+              <Image src={project.thumbnail} alt="post-cover" quality={100} className="rounded-md" fill />
             </div>
-            <div className="flex-1 flex flex-col p-4">
-              <h3 className="text-lg md:text-xl text-center mb-4">{project.name}</h3>
-              <p className="text-xs md:text-sm line-clamp-4 text-justify">{project.description || ''}</p>
+            <div className="w-full h-3/6 md:w-3/5 md:h-full p-[15px] gap-y-[10px] flex flex-col justify-between">
+              <div className="w-full flex-1 flex flex-col gap-y-[20px]">
+                <h3 className="text-xl md:text-2xl text-center">{project.name}</h3>
+                <p className="text-xs md:text-sm text-justify">{project.description || ''}</p>
+              </div>
+              <div className="flex w-full justify-between items-center py-2">
+                <div className="flex gap-x-[5px]">
+                  {project.labels.map((label) => (
+                    <span className="text-xs bg-gray-300 dark:bg-zinc-700 dark:text-white rounded-full px-2 py-1 mr-1">
+                      {label.name}
+                    </span>
+                  ))}
+                </div>
+                <a href={project.url} target="_blank" className="flex items-center">
+                  <img src="/icons/app/link-open.png" alt="link-open" className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         ))}
