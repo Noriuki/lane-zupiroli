@@ -1,8 +1,9 @@
 /** @type { import("eslint").Linter.FlatConfig } */
 module.exports = {
+  root: true,
   env: {
+    jest: false,
     browser: true,
-    jest: false // true if needed
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -16,9 +17,6 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  root: true,
-  ignorePatterns: ['.eslintrc.js'],
-  rules: {
-    "prettier/prettier": "error",
-  },
+  rules: { "prettier/prettier": "error" },
+  ignorePatterns: ['.eslintrc.js', 'postcss.config.js', '.prettierrc.js', 'next.config.js'],
 }

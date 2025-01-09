@@ -1,9 +1,9 @@
 /** @type {import("prettier").Config} */
 module.exports = {
-  "trailingComma": "all",
-  "tabWidth": 2,
   "semi": true,
-  "singleQuote": true,
+  "tabWidth": 2,
   "printWidth": 120,
-  "endOfLine": 'auto'
+  "endOfLine": 'auto',
+  "singleQuote": false,
+  "trailingComma": "all",
 }

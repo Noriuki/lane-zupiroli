@@ -1,10 +1,10 @@
 {
   "projects": [
     {
+      "id": 1,
       "name": "SIGVET",
-      "description": "O sistema SIGVET é um projeto desenvolvido como trabalho de conclusão de curso (TCC) que teve como objetivo principal do projeto criar uma solução para otimizar e facilitar a gestão de um hospital veterinário, proporcionando maior eficiência nos processos administrativos e no atendimento aos animais e seus donos.",
+      "description": "O sistema SIGVET é um projeto desenvolvido como trabalho de conclusão de curso (TCC) que teve como objetivo principal criar uma solução para otimizar e facilitar a gestão de um hospital veterinário, proporcionando maior eficiência nos processos administrativos e no atendimento aos animais e seus donos.",
       "url": "https://github.com/Noriuki/sigvet-front",
-      "thumbnail": "/images/projects/sigvet.png",
       "labels": [
         {
           "name": "JavaScript"
@@ -18,10 +18,10 @@
       ]
     },
     {
+      "id": 2,
       "name": "Direct Mail App",
       "description": "Sistema criado para fins de estudo, com o objetivo de criar um sistema de envio de e-mails em massa.",
       "url": "https://github.com/Noriuki/direct-mail-app",
-      "thumbnail": "/images/projects/direct-mail.png",
       "labels": [
         {
           "name": "Multer"

@@ -1,33 +1,36 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import '@/styles/globals.css';
-import { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
-import Providers from './Providers';
+// Next
+import { Metadata } from "next";
+// Providers
+import Providers from "./Providers";
+// Components
+import Footer from "@/components/Layout/Footer";
+// Fonts
+import { Poppins } from "next/font/google";
+// Styles
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: 'Lane Zupiroli',
-  description: 'Full Stack Developer',
+  title: "Lane Zupiroli",
+  description: "Full Stack Developer",
   icons: {
-    icon: '/icons/icon.png',
-    shortcut: '/icons/icon.png',
-    apple: '/icons/icon.png',
+    icon: "/icons/favicon.png",
+    apple: "/icons/favicon.png",
+    shortcut: "/icons/favicon.png",
   },
 };
 
 const popping = Poppins({
-  weight: ['100', '300', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["100", "300", "500", "700"],
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={popping.className}>
-      <body className="bg-zinc-50 dark:bg-zinc-900">
+      <body className="bg-zinc-900">
         <div className="flex flex-wrap flex-col">
           <Providers>
-            <Header />
             <main className="flex-1 flex flex-wrap">{children}</main>
             <Footer />
           </Providers>
