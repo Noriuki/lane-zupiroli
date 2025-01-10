@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   title: "Lane Zupiroli",
   description: "Full Stack Developer",
   icons: {
-    icon: "/icons/favicon.png",
-    apple: "/icons/favicon.png",
-    shortcut: "/icons/favicon.png",
+    icon: "/icons/app/favicon.png",
+    apple: "/icons/app/favicon.png",
+    shortcut: "/icons/app/favicon.png",
   },
 };
 

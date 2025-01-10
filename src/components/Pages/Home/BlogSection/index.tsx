@@ -1,3 +1,4 @@
+import Title from "@/components/Common/Title";
 import Section from "@/components/Layout/Section";
 import Image from "next/image";
 
@@ -14,7 +15,7 @@ export default async function BlogSection() {
 
   return (
     <Section id="blog">
-      <h2 className="text-4xl text-purple-900 text-center font-bold md:text-6xl mb-8">Blog</h2>
+      <Title title="Blog" />
       <div className="w-full grid grid-cols-1 px-4 md:px-0 gap-x-20 gap-y-8 my-8 justify-items-center md:grid-cols-3">
         {posts?.map((post) => (
           <div
