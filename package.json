@@ -2,6 +2,9 @@
   "private": true,
   "version": "1.3.0",
   "name": "lane-zupiroli",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",
