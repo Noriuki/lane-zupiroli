@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-const popping = Poppins({
+const poppins = Poppins({
   display: "swap",
   subsets: ["latin"],
   weight: ["100", "300", "500", "700"],
@@ -27,8 +27,8 @@ const popping = Poppins({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={popping.className}>
-      <body className="bg-zinc-900">
+    <html className={poppins.className} lang="pt-BR">
+      <body className="text-zinc-100 antialiased">
         <div className="flex flex-wrap flex-col">
           <Providers>
             <main className="flex-1 flex flex-wrap">{children}</main>

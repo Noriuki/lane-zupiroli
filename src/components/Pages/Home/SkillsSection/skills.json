@@ -1,0 +1,22 @@
+{
+  "skills": [
+    { "name": "React", "icon": "react" },
+    { "name": "Next.js", "icon": "nextjs" },
+    { "name": "TypeScript", "icon": "ts" },
+    { "name": "JavaScript", "icon": "js" },
+    { "name": "HTML", "icon": "html" },
+    { "name": "CSS", "icon": "css" },
+    { "name": "Tailwind CSS", "icon": "tailwind" },
+    { "name": "Node.js", "icon": "nodejs" },
+    { "name": "NestJS", "icon": "nestjs" },
+    { "name": "GraphQL", "icon": "graphql" },
+    { "name": "Laravel", "icon": "laravel" },
+    { "name": "Docker", "icon": "docker" },
+    { "name": "CI/CD", "icon": "jenkins" },
+    { "name": "Cloud", "icon": "aws" },
+    { "name": "Python", "icon": "python" },
+    { "name": "Git", "icon": "git" },
+    { "name": "PHP", "icon": "php" },
+    { "name": "Figma", "icon": "figma" }
+  ]
+}

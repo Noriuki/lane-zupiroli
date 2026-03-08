@@ -1,56 +1,43 @@
 import Title from "@/components/Common/Title";
 import Section from "@/components/Layout/Section";
+import { getLatestPosts } from "@/services/dev-to";
 import Image from "next/image";
 
-interface IPost {
-  id: number;
-  url: string;
-  title: string;
-  description: string;
-  cover_image: string;
-}
-
 export default async function BlogSection() {
-  const posts: IPost[] = await getPosts();
+  const posts = await getLatestPosts("noriuki", 3, 1);
 
   return (
     <Section id="blog">
       <Title title="Blog" />
-      <div className="w-full grid grid-cols-1 px-4 md:px-0 gap-x-20 gap-y-8 my-8 justify-items-center md:grid-cols-3">
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
         {posts?.map((post) => (
-          <div
-            key={post.id}
-            className="flex flex-wrap flex-col w-[100%] h-[400px] rounded-md shadow-lg bg-zinc-800 transition-all duration-500 easy-in-out hover:scale-110"
-          >
-            <div className="w-full h-2/5 relative rounded-t-md">
-              <Image src={post?.cover_image} alt="post-cover" quality={100} className="rounded-t-md" fill />
+          <a key={post.id} href={post.url} target="_blank" rel="noopener noreferrer" className="group block h-full">
+            <div className="h-full section-card rounded-2xl overflow-hidden flex flex-col">
+              <div className="relative h-40 flex-shrink-0">
+                <Image
+                  src={post?.cover_image}
+                  alt={post.title}
+                  quality={90}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent h-full" />
+              </div>
+              <div className="flex-1 p-5 flex flex-col min-h-0 relative rounded-t-2xl bg-zinc-900/95 -mt-4 pt-6">
+                <div className="absolute left-0 top-5 bottom-5 w-px bg-gradient-to-b from-accent to-accent-light opacity-40 group-hover:opacity-70 transition-opacity rounded-full" />
+                <h3 className="text-base md:text-lg font-semibold text-zinc-100 line-clamp-2 pl-3 group-hover:text-white transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-zinc-400 line-clamp-3 mt-2 flex-1 pl-3">{post.description}</p>
+                <span className="inline-flex items-center justify-center mt-4 py-2.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-sm font-medium text-white/95 pl-3 transition-opacity group-hover:opacity-90">
+                  Ler mais
+                </span>
+              </div>
             </div>
-
-            <div className="flex-1 p-4 w-full h-3/5 flex flex-col justify-between">
-              <h3 className="text-base md:text-lg text-center">{post.title}</h3>
-              <p className="text-xs line-clamp-4 flex-1 pt-4 text-justify">{post.description}</p>
-              <a
-                href={post.url}
-                target="_blank"
-                className="w-full h-1/5 flex justify-center items-center rounded-md bg-purple-900"
-              >
-                <p className="text-xs md:text-sm">Ler mais...</p>
-              </a>
-            </div>
-          </div>
+          </a>
         ))}
       </div>
     </Section>
   );
-}
-
-async function getPosts() {
-  const res = await fetch("https://dev.to/api/articles/latest?username=noriuki&per_page=3&page=1");
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
 }

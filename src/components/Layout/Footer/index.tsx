@@ -2,12 +2,16 @@ import SocialLinks from "@/components/Common/SocialLinks";
 
 const Footer = () => {
   return (
-    <footer className="h-96 pt-48 pb-16 w-full flex flex-wrap flex-col items-center justify-between">
-      <div className="w-fit">
-        <SocialLinks />
-        <hr className="h-1 bg-purple-900 border-none" />
+    <footer className="w-full pt-24 pb-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-6 w-full max-w-xs">
+          <SocialLinks />
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+        </div>
+        <p className="text-sm text-zinc-500 font-light">
+          Desenvolvido por <span className="text-zinc-300 font-medium">Lane Zupiroli</span>
+        </p>
       </div>
-      <h6 className="text-xl text-purple-900 font-light md:text-2xl">Desenvolvido por Lane Zupiroli</h6>
     </footer>
   );
 };
