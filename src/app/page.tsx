@@ -7,7 +7,7 @@ import SkillsSection from "@/components/Pages/Home/SkillsSection";
 
 export default function Home() {
   return (
-    <div className="max-w-5xl w-full flex flex-wrap mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-6xl w-full flex flex-wrap mx-auto px-4 sm:px-6 lg:px-8">
       <Menu />
       <HeroSection />
       <SkillsSection />

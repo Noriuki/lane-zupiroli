@@ -10,8 +10,8 @@ export const options = [
   },
   {
     id: 2,
-    title: "Skills",
     anchor: "skills",
+    title: "Habilidades",
     icon: <SparklesIcon />,
   },
   {
