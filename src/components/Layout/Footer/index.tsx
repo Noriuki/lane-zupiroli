@@ -2,7 +2,7 @@ import SocialLinks from "@/components/Common/SocialLinks";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-24 pb-12">
+    <footer className="w-full pt-24 pb-12 snap-start snap-always">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-6 w-full max-w-xs">
           <SocialLinks />
