@@ -30,9 +30,9 @@ export default function HeroSection() {
           <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text">Lane Zupiroli</h1>
           <h2 className="text-lg md:text-xl lg:text-2xl text-zinc-400 font-light">Full Stack Developer</h2>
         </div>
-        <p className="text-sm md:text-base text-zinc-500 leading-relaxed mt-6 max-w-xl mx-auto opacity-0 animate-fade-in-up delay-300">
-          Desenvolvo aplicações web de ponta a ponta, do front ao back. Foco em código limpo, boas práticas e entregas
-          que fazem diferença para o usuário.
+        <p className="text-sm md:text-base text-zinc-500 leading-relaxed mt-6 max-w-2xl mx-auto opacity-0 animate-fade-in-up delay-300">
+          Desenvolvo aplicações web & mobile de ponta a ponta, do front ao back. Foco em código limpo, boas práticas e
+          entregas que fazem diferença para o usuário.
         </p>
         <div className="mt-8 opacity-0 animate-fade-in-up delay-400">
           <SocialLinks />
