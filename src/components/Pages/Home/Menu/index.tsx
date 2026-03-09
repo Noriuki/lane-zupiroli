@@ -25,6 +25,12 @@ export default function Menu() {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = (anchor: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById(anchor);
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const accentColor = "#7c3aed";
   const inactiveColor = "#71717a";
 
@@ -38,8 +44,9 @@ export default function Menu() {
         return (
           <a
             key={item.id}
-            href={`#${item.anchor}`}
             aria-label={item.title}
+            href={`#${item.anchor}`}
+            onClick={scrollToSection(item.anchor)}
             className="group flex items-center gap-3 text-zinc-500 hover:text-zinc-100 transition-colors duration-200"
           >
             <span

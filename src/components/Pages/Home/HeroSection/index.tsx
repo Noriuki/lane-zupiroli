@@ -2,6 +2,7 @@
 // Components
 import SocialLinks from "@/components/Common/SocialLinks";
 import Section from "@/components/Layout/Section";
+import FadeInOnView from "@/components/Common/FadeInOnView";
 import Image from "next/image";
 // Services
 import { gql, useQuery } from "@apollo/client";
@@ -13,8 +14,8 @@ export default function HeroSection() {
 
   return (
     <Section id="about">
-      <div className="w-full max-w-2xl mx-auto text-center">
-        <div className="flex justify-center opacity-0 animate-fade-in-up">
+      <FadeInOnView className="w-full max-w-2xl mx-auto text-center">
+        <div className="flex justify-center">
           <div className="relative rounded-full overflow-hidden ring-2 ring-accent/70">
             <Image
               height={0}
@@ -26,18 +27,18 @@ export default function HeroSection() {
             />
           </div>
         </div>
-        <div className="space-y-2 mt-6 md:mt-8 opacity-0 animate-fade-in-up delay-200">
+        <div className="space-y-2 mt-6 md:mt-8">
           <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text">Lane Zupiroli</h1>
           <h2 className="text-lg md:text-xl lg:text-2xl text-zinc-400 font-light">Full Stack Developer</h2>
         </div>
-        <p className="text-sm md:text-base text-zinc-500 leading-relaxed mt-6 max-w-2xl mx-auto opacity-0 animate-fade-in-up delay-300">
+        <p className="text-sm md:text-base text-zinc-500 leading-relaxed mt-6 max-w-2xl mx-auto">
           Desenvolvo aplicações web & mobile de ponta a ponta, do front ao back. Foco em código limpo, boas práticas e
           entregas que fazem diferença para o usuário.
         </p>
-        <div className="mt-8 opacity-0 animate-fade-in-up delay-400">
+        <div className="mt-8">
           <SocialLinks />
         </div>
-      </div>
+      </FadeInOnView>
     </Section>
   );
 }
