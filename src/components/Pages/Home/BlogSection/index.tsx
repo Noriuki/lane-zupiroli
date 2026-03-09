@@ -13,15 +13,19 @@ export default async function BlogSection() {
         {posts?.map((post) => (
           <a key={post.id} href={post.url} target="_blank" rel="noopener noreferrer" className="group block h-full">
             <div className="h-full section-card rounded-2xl overflow-hidden flex flex-col">
-              <div className="relative h-40 flex-shrink-0">
-                <Image
-                  src={post?.cover_image}
-                  alt={post.title}
-                  quality={90}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+              <div className="relative h-40 flex-shrink-0 bg-zinc-800">
+                {post.cover_image ? (
+                  <Image
+                    src={post.cover_image}
+                    alt={post.title}
+                    quality={90}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-light/10" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent h-full" />
               </div>
               <div className="flex-1 p-5 flex flex-col min-h-0 relative rounded-t-2xl bg-zinc-900/95 -mt-4 pt-6">

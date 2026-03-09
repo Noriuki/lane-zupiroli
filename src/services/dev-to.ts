@@ -5,11 +5,13 @@ export interface IDevToPost {
   url: string;
   title: string;
   description: string;
-  cover_image: string;
+  cover_image: string | null;
 }
 
 export async function getLatestPosts(username: string, perPage = 3, page = 1): Promise<IDevToPost[]> {
-  const res = await fetch(`${DEV_TO_API_BASE}/articles/latest?username=${username}&per_page=${perPage}&page=${page}`);
+  const res = await fetch(`${DEV_TO_API_BASE}/articles?username=${username}&per_page=${perPage}&page=${page}`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch Dev.to posts");
