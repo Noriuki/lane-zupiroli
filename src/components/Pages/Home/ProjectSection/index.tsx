@@ -128,7 +128,7 @@ export default function ProjectSection() {
               {Array.from({ length: pageCount }).map((_, pageIndex) => (
                 <div
                   key={pageIndex}
-                  className="box-border shrink-0 min-w-0 px-0.5"
+                  className="box-border shrink-0 min-w-0 px-3 md:px-5"
                   style={{
                     flex: `0 0 ${100 / pageCount}%`,
                     maxWidth: `${100 / pageCount}%`,
