@@ -2,37 +2,45 @@
   "projects": [
     {
       "id": 1,
-      "name": "SIGVET",
-      "description": "O sistema SIGVET é um projeto desenvolvido como trabalho de conclusão de curso (TCC) que teve como objetivo principal criar uma solução para otimizar e facilitar a gestão de um hospital veterinário, proporcionando maior eficiência nos processos administrativos e no atendimento aos animais e seus donos.",
-      "url": "https://github.com/Noriuki/sigvet-front",
-      "labels": [
-        {
-          "name": "JavaScript"
-        },
-        {
-          "name": "React"
-        },
-        {
-          "name": "Node.js"
-        }
-      ]
+      "name": "CodeTrends",
+      "description": "Dashboard de tendências para desenvolvedores: repositórios em alta no GitHub, pacotes npm populares e destaques do ecossistema. Next.js, TypeScript, Tailwind e cache de APIs.",
+      "url": "https://github.com/Noriuki/code-trends",
+      "labels": [{ "name": "Next.js" }, { "name": "TypeScript" }, { "name": "Tailwind" }]
     },
     {
       "id": 2,
-      "name": "Direct Mail App",
-      "description": "Sistema criado para fins de estudo, com o objetivo de criar um sistema de envio de e-mails em massa.",
-      "url": "https://github.com/Noriuki/direct-mail-app",
-      "labels": [
-        {
-          "name": "Multer"
-        },
-        {
-          "name": "Nodemailer"
-        },
-        {
-          "name": "Node.js"
-        }
-      ]
+      "name": "GitHub Doctor",
+      "description": "Analisa repositórios GitHub e gera relatório de saúde: score, documentação, testes, CI/CD e dependências. Full-stack FastAPI + React (Vite).",
+      "url": "https://github.com/Noriuki/github-doctor",
+      "labels": [{ "name": "FastAPI" }, { "name": "React" }, { "name": "Python" }]
+    },
+    {
+      "id": 3,
+      "name": "PrivacyRadar",
+      "description": "Assistente de privacidade LGPD: checklist para desenvolvedores e análise de contratos OpenAPI/GraphQL. FastAPI + React.",
+      "url": "https://github.com/Noriuki/privacy-radar",
+      "labels": [{ "name": "FastAPI" }, { "name": "React" }, { "name": "LGPD" }]
+    },
+    {
+      "id": 4,
+      "name": "Prompt Lens",
+      "description": "Análise de prompts com cache e observabilidade: métricas, clareza, sugestões e rate limit. API FastAPI + interface React.",
+      "url": "https://github.com/Noriuki/prompt-lens",
+      "labels": [{ "name": "FastAPI" }, { "name": "React" }, { "name": "LLM" }]
+    },
+    {
+      "id": 5,
+      "name": "ScrumBot",
+      "description": "Bot de Discord para Planning Poker e cerimônias ágeis: sessões, user stories, votos ocultos e revelação. NestJS, PostgreSQL e TypeORM.",
+      "url": "https://github.com/Noriuki/scrum-bot",
+      "labels": [{ "name": "NestJS" }, { "name": "Discord" }, { "name": "TypeScript" }]
+    },
+    {
+      "id": 6,
+      "name": "StreamPulse",
+      "description": "Streaming e monitoramento de logs em tempo real com Node.js streams e WebSockets: pipeline, filtros, dashboard e CLI.",
+      "url": "https://github.com/Noriuki/stream-pulse",
+      "labels": [{ "name": "Node.js" }, { "name": "WebSocket" }, { "name": "TypeScript" }]
     }
   ]
 }
