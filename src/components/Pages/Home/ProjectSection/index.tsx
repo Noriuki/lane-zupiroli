@@ -119,15 +119,22 @@ export default function ProjectSection() {
             aria-label="Lista de projetos — arraste para mudar de página"
           >
             <div
-              className={`flex shrink-0 ${transitionClass}`}
+              className={`flex shrink-0 items-stretch ${transitionClass}`}
               style={{
                 width: `${pageCount * 100}%`,
                 transform: `translateX(calc(-${basePercent}% + ${dragOffset}px))`,
               }}
             >
               {Array.from({ length: pageCount }).map((_, pageIndex) => (
-                <div key={pageIndex} className="shrink-0 box-border px-0.5" style={{ width: `${100 / pageCount}%` }}>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+                <div
+                  key={pageIndex}
+                  className="box-border shrink-0 min-w-0 px-0.5"
+                  style={{
+                    flex: `0 0 ${100 / pageCount}%`,
+                    maxWidth: `${100 / pageCount}%`,
+                  }}
+                >
+                  <div className="grid h-full grid-cols-1 md:grid-cols-3 md:grid-rows-1 gap-5 md:gap-6">
                     {projects
                       .slice(pageIndex * ITEMS_PER_PAGE, pageIndex * ITEMS_PER_PAGE + ITEMS_PER_PAGE)
                       .map((project) => (
@@ -136,11 +143,11 @@ export default function ProjectSection() {
                           href={project.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group block"
+                          className="group flex h-full min-h-[280px] flex-col"
                           onClickCapture={onLinkClick}
                           draggable={false}
                         >
-                          <div className="h-full section-card rounded-2xl p-6 relative overflow-hidden flex flex-col min-h-[280px]">
+                          <div className="section-card flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl p-6 relative">
                             <div className="absolute left-0 top-6 bottom-6 w-px bg-gradient-to-b from-accent to-accent-light opacity-50 rounded-full group-hover:opacity-80 transition-opacity" />
                             <div className="pl-4">
                               <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest">
