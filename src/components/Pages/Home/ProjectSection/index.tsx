@@ -23,16 +23,21 @@ export default function ProjectSection() {
       <FadeInOnView className="w-full flex flex-col items-center gap-8 md:gap-10">
         <Title title="Projetos" />
         <div className="w-full relative">
-          <div className="overflow-hidden rounded-2xl">
+          {/* Viewport: uma “página” por vez — track com largura total = N × 100% do viewport */}
+          <div className="w-full overflow-hidden rounded-2xl">
             <div
-              className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
-              style={{ transform: `translateX(-${page * 100}%)` }}
+              className="flex shrink-0 transition-transform duration-500 ease-out motion-reduce:transition-none"
+              style={{
+                width: `${pageCount * 100}%`,
+                transform: `translateX(-${(page * 100) / pageCount}%)`,
+              }}
             >
               {Array.from({ length: pageCount }).map((_, pageIndex) => (
-                <div key={pageIndex} className="min-w-full shrink-0 px-0.5">
+                <div key={pageIndex} className="shrink-0 box-border px-0.5" style={{ width: `${100 / pageCount}%` }}>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-                    {projects.slice(pageIndex * ITEMS_PER_PAGE, pageIndex * ITEMS_PER_PAGE + ITEMS_PER_PAGE).map(
-                      (project) => (
+                    {projects
+                      .slice(pageIndex * ITEMS_PER_PAGE, pageIndex * ITEMS_PER_PAGE + ITEMS_PER_PAGE)
+                      .map((project) => (
                         <a
                           key={project.id}
                           href={project.url}
@@ -43,7 +48,9 @@ export default function ProjectSection() {
                           <div className="h-full section-card rounded-2xl p-6 relative overflow-hidden flex flex-col min-h-[280px]">
                             <div className="absolute left-0 top-6 bottom-6 w-px bg-gradient-to-b from-accent to-accent-light opacity-50 rounded-full group-hover:opacity-80 transition-opacity" />
                             <div className="pl-4">
-                              <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest">Projeto</span>
+                              <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest">
+                                Projeto
+                              </span>
                               <h3 className="text-xl md:text-2xl font-semibold text-zinc-100 mt-1 group-hover:text-white transition-colors">
                                 {project.name}
                               </h3>
@@ -66,8 +73,7 @@ export default function ProjectSection() {
                             </p>
                           </div>
                         </a>
-                      ),
-                    )}
+                      ))}
                   </div>
                 </div>
               ))}
